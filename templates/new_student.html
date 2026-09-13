@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body style="background:#f4f6fc;">
+<div class="container mt-5" style="max-width:600px;">
+<div class="card p-4 shadow">
+<h3 class="text-warning fw-bold text-center">👋 New Student Found!</h3>
+<p class="text-center">Email <b>{{ email }}</b> not in database. Please enter details for AI prediction.</p>
+<form method="POST" action="/predict">
+<input type="hidden" name="email" value="{{ email }}">
+<label class="mt-2">CGPA (out of 10)</label>
+<input type="number" step="0.1" name="cgpa" class="form-control" placeholder="e.g. 8.5" required>
+<label class="mt-2">Attendance %</label>
+<input type="number" name="attendance" class="form-control" placeholder="e.g. 85" required>
+<label class="mt-2">Your Skills (comma separated)</label>
+<input type="text" name="skills" class="form-control" placeholder="Python, Java, SQL" required>
+<button type="submit" class="btn btn-warning w-100 mt-4 fw-bold">Get AI Prediction</button>
+</form>
+</div>
+</div>
+</body></html>
